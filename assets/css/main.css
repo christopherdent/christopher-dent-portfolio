@@ -16,7 +16,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  background: linear-gradient(to bottom right, #486087, #1503d7, #f3f3f3);
+  background: #18181b;
+  transition: background 0.5s ease;
 }
 @media (prefers-color-scheme: dark) {
   .hero-container {

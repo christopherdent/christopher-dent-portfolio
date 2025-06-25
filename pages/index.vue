@@ -66,18 +66,11 @@
   box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
 }
 
-/* Add illumination effect on hover */
-/* .hero-container {
-  transition: background 0.5s ease-in-out;
+.hero-container {
+    transition: background
 }
 .hero-container:hover {
- 
-  background: linear-gradient(
-    to bottom right,
-    rgba(196,181,253,0.9),
-    rgba(216,180,254,0.9),
-    rgba(191,219,254,0.9)
-  );
-} */
+  background: rgb(8, 13, 71);
+}
 
 </style>
