@@ -15,6 +15,7 @@ export default defineNuxtConfig({
         { src: 'https://cdn.jsdelivr.net/npm/three/build/three.min.js', defer: true },
         { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js', defer: true }
       ]
-    }
+    },
+    
   }
 });
