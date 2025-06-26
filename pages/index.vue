@@ -1,14 +1,27 @@
 <template>
-  <UContainer class="hero-container" size="full">
+  <UContainer 
+    class="hero-container p-8 shadow-md rounded-xl" 
+    size="full" 
+    ref="containerRef"
+    :class="isHovered ? 'bg-active glow' : 'bg-default transition-all duration-300'"
+    @mouseover="isHovered = true"
+    @mouseleave="isHovered = false"
+    
+    >
     <UGrid align="center" class="hero-inner">
       <UGridItem
         cols="12"
         md="6"
-        class="flex flex-col items-center text-center md:items-start md:text-left"
+        class="flex flex-col items-center text-center md:text-center"
       >
         
-      <UHeading size="4xl" class="heading-hover-effect text-shadow-md">Christopher James Dent</UHeading>
+      <!-- Header -->
+      <h1 class="heading-hover-effect text-shadow-md text-4xl font-bold">
+        Christopher James Dent
+      </h1>
 
+
+      <!-- Subheading / tooltips -->
         <div class="pt-4">
           <UTooltip  
             :content="{  
@@ -48,12 +61,14 @@
 
         </div>
 
-        <div class="flex flex-col gap-4 pt-8 md:flex-row md:gap-4">
+        <!-- Call to Action Buttons -->
+
+        <div class="flex flex-col pt-4 md:flex-row">
           <UButton
             icon="i-lucide-scroll-text"
             size="lg"
             color="primary"
-            variant="solid"
+            variant="ghost"
             class="shadow-xl font-semibold"
           >
             View Resume
@@ -62,7 +77,7 @@
             icon="i-lucide-file-user"
             size="lg"
             color="primary"
-            variant="outline"
+            variant="ghost"
             class="shadow-xl font-semibold"
           >
             Read Bio
@@ -72,7 +87,7 @@
             size="lg"
             color="primary"
             variant="ghost"
-            class="font-semibold"
+            class="shadow-xl font-semibold"
           >
             View Projects
           </UButton>
@@ -88,8 +103,8 @@
       </UGridItem>
     </UGrid>
 
-    <UText class="mt-16 text-gray-600 dark:text-gray-400 text-sm text-center">
-      © {{ new Date().getFullYear() }} Christopher Dent. All rights reserved.
+    <UText class="mt-30 text-gray-600 dark:text-gray-400 text-sm text-center">
+      © {{ new Date().getFullYear() }} Christopher Dent
     </UText>
   </UContainer>
 </template>
@@ -127,6 +142,10 @@
   transition: background 0.05s linear;
 }
 .hero-container:hover {
-  background: #020282;
+    background: linear-gradient(to bottom right, #1e293b, #4c1d95);
+    /* background: linear-gradient(to bottom right, #0f172a, #10b981);
+    background: linear-gradient(to bottom right, #1e293b, #3b82f6); */
+
+    box-shadow: 0 0 20px rgba(76, 29, 149, 0.5);
 }
 </style>

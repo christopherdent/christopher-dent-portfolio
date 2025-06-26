@@ -4,8 +4,13 @@
 /* Layout - Keep these as they define the overall page structure and are not component-specific */
 body {
   font-family: 'Inter', sans-serif;
-  /* Assuming this is your global font preference */
 }
+
+.hero-header {
+  color: grey-100;
+  text-align: center;
+}
+
 
 .hero-container {
   min-height: 100vh;
@@ -14,8 +19,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
 }
-/* Keep dark mode styles if not using @nuxtjs/color-mode, otherwise it might be redundant */
+
 @media (prefers-color-scheme: dark) {
   .hero-container {
     background: linear-gradient(to bottom right, #111827, #1f2937);
@@ -27,7 +35,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem; /* Nuxt UI Grid components usually handle this, but explicit gap is fine */
+  gap: 3rem;
   width: 100%;
   max-width: 82rem;
 }
@@ -36,6 +44,6 @@ body {
   .hero-inner {
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start; /* or center if you prefer */
+    justify-content: flex-start;
   }
 }
