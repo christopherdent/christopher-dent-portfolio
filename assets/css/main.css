@@ -2,17 +2,6 @@
 @import "@nuxt/ui";
 
 
-/* ————————— Global page background ————————— */
-/* body {
-  background: #f3f4f6;
-  font-family: 'Inter', sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(to bottom right, #1e293b, #4c1d95);
-  }
-} */
-
 html,
 body {
   height: 100%;
@@ -32,7 +21,6 @@ html.dark body {
 }
 
 
-
 .hero-header {
   color: grey-100;
   text-align: center;
@@ -47,8 +35,16 @@ html.dark body {
   align-items: center;
   padding: 1.5rem;
   width: 100%;
-  max-width: 100rem;
+  max-width: 75%;
   margin: 0 auto;
+  transition: all 0.5s ease;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* shadow-md */
+}
+@media (prefers-color-scheme: dark) {
+  .hero-container {
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,7 +60,7 @@ html.dark body {
   justify-content: center;
   gap: 3rem;
   width: 100%;
-  max-width: 82rem;
+  padding-top: 5rem; /* add this */
 }
 
 @media (min-width: 768px) {
@@ -72,5 +68,17 @@ html.dark body {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+  }
+}
+
+/* Default – no extra horizontal gap */
+.hero-gap {
+  row-gap: 3rem;      /* keep your vertical spacing */
+}
+
+/* Only from xl and up */
+@media (min-width: 1980px) {
+  .hero-gap {
+    column-gap: 10rem; /* big 10-rem gap on wide screens */
   }
 }
