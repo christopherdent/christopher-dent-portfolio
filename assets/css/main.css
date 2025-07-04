@@ -1,10 +1,37 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/* Layout - Keep these as they define the overall page structure and are not component-specific */
-body {
+
+/* ————————— Global page background ————————— */
+/* body {
+  background: #f3f4f6;
   font-family: 'Inter', sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(to bottom right, #1e293b, #4c1d95);
+  }
+} */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #94a3b8 !important;
+  font-family: 'Inter', sans-serif;
+}
+
+/* If you’re using Tailwind’s class-based dark mode,
+   swap this media query for the .dark selector: */
+html.dark body {
+  background: linear-gradient(to bottom right, #1e293b, #4c1d95);
+}
+
+
 
 .hero-header {
   color: grey-100;
