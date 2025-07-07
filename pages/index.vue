@@ -1,15 +1,22 @@
 <template>
   <UContainer
-    class="hero-container p-8 shadow-md rounded-xl transition-all duration-500"
+    class="hero-container shadow-md rounded-xl transition-all duration-500"
     size="full"
     @mouseover="isHovered = true"
     @mouseleave="isHovered = false"
     :style="containerStyle"
   >
-    <UGrid align="center" class="hero-inner">
+
+
+    <UGrid align="center" class="hero-inner max-w-screen-2xl px-4 py-8 hero-gap">
+      
+
       <UGridItem cols="12" md="6" class="flex flex-col items-center text-center">
         <!-- Header -->
-        <h1 class="heading-hover-effect text-shadow-md text-4xl font-bold">
+        <h1 
+        class="heading-hover-effect text-shadow-md text-4xl font-bold text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
+        :class="headingColorClass"
+        >
           Christopher James Dent
         </h1>
         <!-- Subheading / tooltips -->
@@ -44,7 +51,7 @@
         </div>
         <!-- Call to Action Buttons -->
         <div class="flex flex-col pt-4 md:flex-row md:space-x-4">
-          <UButton icon="i-lucide-scroll-text" size="lg" color="primary" variant="ghost" class="shadow-xl font-semibold">
+          <UButton icon="i-lucide-scroll-text" size="lg" color="primary" variant="ghost" class="shadow-xl font-semibold" to="/resume">
             View Resume
           </UButton>
           <UButton icon="i-lucide-file-user" size="lg" color="primary" variant="ghost" class="shadow-xl font-semibold">
@@ -55,6 +62,8 @@
           </UButton>
         </div>
       </UGridItem>
+
+
       <UGridItem cols="12" md="6" class="flex flex-col items-center">
         <img
           src="https://cjdportfolio.s3.us-east-1.amazonaws.com/hero_portfolio.png"
@@ -62,17 +71,14 @@
           class="hero-image h-[66vh] w-auto object-contain rounded-xl shadow-xl"
         />
         <!-- Centered Theme Toggle under the image -->
-        <div class="mt-6">
+        <div class="mt-6 pt-6">
           <ThemeToggle v-model="selectedTheme" />
         </div>
       </UGridItem>
     </UGrid>
-<UText
-  class="absolute bottom-4 left-1/2 transform -translate-x-1/2
-         text-gray-600 dark:text-gray-400 text-sm"
->
-  © {{ new Date().getFullYear() }} Christopher Dent
-</UText>
+    <UText class="mt-25 text-gray-600 dark:text-gray-400 text-sm text-center">
+      © {{ new Date().getFullYear() }} Christopher Dent
+    </UText>
   </UContainer>
 </template>
 
@@ -80,48 +86,64 @@
 import { ref, computed } from 'vue'
 import ThemeToggle from '~/components/ThemeToggle.vue'
 
-// track hover state
-const isHovered = ref(false)
-// track selected theme
-const selectedTheme = ref('cosmic')
+  // track hover state
+  const isHovered = ref(false)
+  // track selected theme
+  const selectedTheme = ref('cosmic')
 
-// define base colors for each theme
-const themeColors = {
-  cosmic: ['#1e293b', '#4c1d95'],
-  neon: ['#0f172a', '#10b981'],
-  cool: ['#1e293b', '#3b82f6'],
-  psychedelic: ['#ff6b6b', '#845ef7']
-}
+  // define base colors for each theme
+  const themeColors = {
+    cosmic: ['#1e293b', '#4c1d95'],
+    neon: ['#0f172a', '#10b981'],
+    cool: ['#1e293b', '#3b82f6'],
+    psychedelic: ['#ff6b6b', '#845ef7']
+  }
 
-// compute inline style for background and glow
-const containerStyle = computed(() => {
-  if (isHovered.value) {
-    const colors = themeColors[selectedTheme.value] || ['#0d1117', '#0d1117']
-    return {
-      backgroundImage: `linear-gradient(to bottom right, ${colors.join(', ')})`,
-      boxShadow: `0 0 20px rgba(255, 255, 255, 0.3)`
+  const headingColorClass = computed(() => {
+    switch (selectedTheme.value) {
+      case 'cosmic':
+        return 'text-gray-100' 
+      case 'neon':
+        return 'text-emerald-300'
+      case 'cool':
+        return 'text-blue-300'
+      case 'psychedelic':
+        return 'text-yellow-300'
+      default:
+        return 'text-white'
     }
-  }
-  return {
-    backgroundColor: '#0d1117'
-  }
-})
+  })
+
+
+  // compute inline style for background and glow
+  const containerStyle = computed(() => {
+    if (isHovered.value) {
+      const colors = themeColors[selectedTheme.value] || ['#0d1117', '#0d1117']
+      return {
+        backgroundImage: `linear-gradient(to bottom right, ${colors.join(', ')})`,
+        boxShadow: `0 0 20px rgba(255, 255, 255, 0.3)`
+      }
+    }
+    return {
+      backgroundColor: '#0d1117'
+    }
+  })
 </script>
 
 <style scoped>
-/* Custom hover effects */
-.heading-hover-effect {
-  transition: filter 0.5s ease-in-out, text-shadow 0.5s;
-}
-.heading-hover-effect:hover {
-  filter: brightness(2);
-  text-shadow: 0 0 16px #fff, 0 0 8px #fff;
-}
-.hero-image {
-  transition: filter 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-}
-.hero-image:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
-}
+  /* Custom hover effects */
+  .heading-hover-effect {
+    transition: filter 0.5s ease-in-out, text-shadow 0.5s;
+  }
+  .heading-hover-effect:hover {
+    filter: brightness(2);
+    text-shadow: 0 0 16px #fff, 0 0 8px #fff;
+  }
+  .hero-image {
+    transition: filter 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+  .hero-image:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+  }
 </style>
