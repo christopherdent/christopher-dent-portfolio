@@ -67,9 +67,12 @@
         </div>
       </UGridItem>
     </UGrid>
-    <UText class="mt-30 text-gray-600 dark:text-gray-400 text-sm text-center">
-      © {{ new Date().getFullYear() }} Christopher Dent
-    </UText>
+<UText
+  class="absolute bottom-4 left-1/2 transform -translate-x-1/2
+         text-gray-600 dark:text-gray-400 text-sm"
+>
+  © {{ new Date().getFullYear() }} Christopher Dent
+</UText>
   </UContainer>
 </template>
 
