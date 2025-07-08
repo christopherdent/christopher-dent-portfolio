@@ -51,7 +51,7 @@
         </div>
         <!-- Call to Action Buttons -->
         <div class="flex flex-col pt-4 md:flex-row md:space-x-4">
-          <UButton icon="i-lucide-scroll-text" size="lg" color="primary" variant="ghost" class="shadow-xl font-semibold">
+          <UButton icon="i-lucide-scroll-text" size="lg" color="primary" variant="ghost" class="shadow-xl font-semibold" to="/resume">
             View Resume
           </UButton>
           <UButton icon="i-lucide-file-user" size="lg" color="primary" variant="ghost" class="shadow-xl font-semibold">
