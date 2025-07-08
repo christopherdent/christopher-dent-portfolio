@@ -26,7 +26,7 @@ const resumeUrl = '/pdf/ChristopherDentResume.pdf';
                 <section class="flex-1 p-4">
                     <UContainer class="chat-container shadow-md rounded-xl"
                                 size="medium"
-                                :style="containerStyle">
+                                >
                         <!-- replace the static text with our chat -->
                         <ChatSidebar />
                     </UContainer>

@@ -1,6 +1,16 @@
 <!-- components/ChatSidebar.vue -->
 <template>
   <div class="h-full flex flex-col">
+
+            <!-- “Ask ChrisBot header -->
+    <div class="px-4 pt-4">
+      <h2 class="text-3xl font-extrabold font-sans mb-2">
+        Ask ChrisBot
+      </h2>
+    </div>
+
+
+    
     <!-- Chat log -->
     <div
       ref="log"
@@ -16,12 +26,6 @@
       </div>
     </div>
 
-        <!-- “Ask ChrisBot header -->
-    <div class="px-4 pt-4">
-      <h2 class="text-3xl font-extrabold font-sans mb-2">
-        Ask ChrisBot
-      </h2>
-    </div>
 
     <!-- Input box -->
     <form
