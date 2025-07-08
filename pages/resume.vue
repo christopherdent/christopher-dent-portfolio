@@ -2,6 +2,9 @@
 const resumeUrl = '/pdf/ChristopherDentResume.pdf';
 </script>
 <template>
+    <div>
+
+<a href="/" class="text-blue-500 hover:underline items-center justify-center">Dent Home</a>
     <div class="flex h-full items-center justify-center">
         <!-- left panel -->
         <section class="flex-none max-w-xl p-8 ml-10">
@@ -24,7 +27,7 @@ const resumeUrl = '/pdf/ChristopherDentResume.pdf';
             </UContainer>
         </section>
     </div>
-
+</div>
 
 
 </template>
