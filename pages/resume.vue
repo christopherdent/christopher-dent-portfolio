@@ -4,9 +4,15 @@ const resumeUrl = '/pdf/ChristopherDentResume.pdf';
 </script>
 <template>
     <div>
+<div class="w-full flex justify-center py-6">
+  <a
+    href="/"
+    class="text-4xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
+  >
+    Dent Home
+  </a>
+</div>
 
-        <a href="/"
-           class="text-blue-500 hover:underline items-center justify-center">Dent Home</a>
         <div class="flex h-full items-center justify-center">
             <!-- left panel -->
             <section class="flex-none max-w-xl p-8 ml-10">

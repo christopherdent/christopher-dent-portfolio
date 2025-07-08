@@ -16,6 +16,13 @@
       </div>
     </div>
 
+        <!-- “Ask ChrisBot header -->
+    <div class="px-4 pt-4">
+      <h2 class="text-3xl font-extrabold font-sans mb-2">
+        Ask ChrisBot
+      </h2>
+    </div>
+
     <!-- Input box -->
     <form
       @submit.prevent="submitQuestion"
