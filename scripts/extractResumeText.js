@@ -35,7 +35,7 @@ async function run() {
     const { text } = await pdfParse(pdfBuffer)
 
     // 4) write out to server/utils
-    const outDir = path.resolve(__dirname, '../server/utils')
+     const outDir  = path.resolve(process.cwd(), 'public')
     if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true })
 
     const outPath = path.join(outDir, 'resumeText.txt')
