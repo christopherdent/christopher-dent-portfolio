@@ -11,8 +11,9 @@ export default defineEventHandler(async (event) => {
   // Build absolute path to the text file
   const __filename = fileURLToPath(import.meta.url)
   const __dirname  = path.dirname(__filename)
-  const resumePath = path.resolve(__dirname, '../utils/resumeText.txt')
+const resumePath = path.resolve(process.cwd(), 'server/utils/resumeText.txt')
 
+console.log(process.env.OPENAI_API_KEY)
   // Read it at runtime
   const resumeText = await readFile(resumePath, 'utf-8')
 
