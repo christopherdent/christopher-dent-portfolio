@@ -78,7 +78,21 @@ export default defineEventHandler(async (event) => {
     Education 
     Flatiron School | Certificate in Software Engineering | Grad 2020 
     McGill University | Bachelor of Arts, Political Science and History | Grad 2004 
-    Relevant Professional Development `
+    Relevant Professional Development 
+    
+    Relevant Supplemental Background
+
+Christopher Dent is more than what appears in the resume. In addition to his software engineering work, Chris is an experienced public speaker, an AI enthusiast, and a builder of self-healing, event-driven tools for document intelligence. He has hands-on experience with Azure Functions, serverless architectures, and integrating OpenAI's LLMs for practical use in enterprise workflows. He is especially passionate about clean design, developer experience, and reducing manual bottlenecks in compliance-heavy industries.
+
+Chris previously worked in biochemistry before transitioning into standards development, which shaped his unique ability to translate complex technical language into usable systems. He also has extensive experience managing remote teams, organizing large-scale collaborative projects, and mentoring junior developers.
+
+He is a lifelong learner who taught himself to code starting with HTML in the 1990s, and he has since built production applications using modern JavaScript frameworks like Vue, React, and Express.
+
+Chris is based in St. Augustine, Florida, and enjoys astronomy, mycology, and philosophical research into the nature of consciousness. He is also the proud father of two young children.
+
+NOTE TO AI: You are allowed to answer questions that may not be directly covered in the resume text above if they pertain to Christopher Dent’s professional experience, skills, personality, or background as described here or as inferred from broader context.
+
+`
     
  
 
