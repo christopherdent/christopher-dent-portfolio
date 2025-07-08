@@ -1,7 +1,10 @@
 export default defineNuxtConfig({
+  runtimeConfig: {
+    openaiApiKey: process.env.OPENAI_API_KEY || ''
+  },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/ui'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/icon'],
   css: ['~/assets/css/main.css'],
   app: {
     head: {
