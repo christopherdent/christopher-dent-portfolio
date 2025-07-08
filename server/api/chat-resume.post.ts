@@ -7,8 +7,84 @@ export default defineEventHandler(async (event) => {
   const { question } = await readBody<{ question: string }>(event)
 
   // READ from public/ instead of server/utils:
-   const resumePath = path.resolve(process.cwd(), 'server/utils/resumeText.txt')
-  const resumeText = await readFile(resumePath, 'utf-8')
+  //  const resumePath = '/pdf/resumeText.txt';
+  // const resumeText = await readFile(resumePath, 'utf-8')
+
+  const resumeText = 
+
+`Christopher James Dent 
+    
+    Full Stack Software Engineer / 
+    Former Standards Development Manager 
+    christopherdent01@gmail.com  
+    Saint Augustine, Florida, USA 
+    240.246.5915 
+    https://linkedin.com/in/christopher-james-dent
+    
+    About 
+    
+    Results-oriented software engineer with 3+ years of experience in full-stack web development and over a decade 
+    of project management in scientific standards development. Currently building enterprise-grade solutions in 
+    VueJS, Node, and Ruby on Rails at OpsCompass. Known for bridging technical execution with strategic mission 
+    alignment, I bring a rare blend of hands-on coding expertise and deep familiarity with the scientific and 
+    regulatory landscape that underpins global health standards. Recently, I've been spearheading internal AI-driven 
+    tools for document summarization and intelligent data extraction using LLMs and vector-based retrieval systems 
+    to enhance enterprise compliance workflows. Willing to relocate for the right opportunity. 
+    Skills 
+    
+    Technical: VueJS, React, Ruby on Rails, Node.js, JavaScript, SQL (MySQL, Postgres, SQLite), HTML, CSS, jQuery, 
+    Bootstrap 5, REST APIs, Serverless Functions, Git/GitHub/GitLab, CI/CD, Linux, Azure, AWS, Oracle systems, 
+    SaaS/PaaS/IaaS/iPaaS, software and hardware troubleshooting, general web development. 
+    Management: Association management, business case development, change management (certified), program 
+    management, project management (certified), technical writing, stakeholder communication, and most common 
+    project and productivity software suites. 
+    Experience 
+    Full Stack Software Engineer · OpsCompass, Inc. (Remote) | Dec '21 – Present 
+    
+    ● Spearheaded a critical project leading the upgrade of the company's application to VueJS version 3, 
+    enhancing performance and user experience. 
+    ● Experience integrating with external APIs and enterprise platforms, including Oracle-based systems. 
+    ● Wrote and optimized code for various components, ensuring high-quality deliverables within specified 
+    timelines. 
+    ● Provided technical expertise and guidance to team members, fostering a collaborative and innovative 
+    work environment. 
+    ● Actively conducted and participated in code reviews and contributed to the continuous improvement of 
+    coding standards and best practices. 
+    ● Proactively identified and resolved software bugs, improving overall application stability. 
+    ● Currently developing AI-powered tools for document classification, summarization, and metadata 
+    extraction using OpenAI APIs and custom RAG pipelines. 
+    
+    Senior Program Manager, Science Programs · AOAC INTERNATIONAL (Remote) | Dec '13 - Dec '21 
+
+    ● Led AOAC's Cannabis Analytical Science Program (CASP) and served as primary POC for AOAC's Stakeholder 
+    Panel on Dietary Supplements (SPDS), working closely with industry stakeholders including USP. 
+    ● Led multiple webinars per week for active working groups and advisory panels. 
+    ● Managed volunteer experts from government, industry, and academia to develop consensus-based 
+    analytical standards. 
+    ● Gave presentations at relevant industry conferences, virtually and in person. 
+    ● Led weekly team meetings to ensure project milestones were being achieved and risks/issues were being 
+    addressed. 
+    IT Project Officer · City of Edinburgh Council | Mar '10 - Nov '13 
+    ● Assistant Project Manager for a city-wide asset management software system implementation. 
+    ● Led service improvement projects within the Environment Division, contributing to enhanced operational 
+    efficiency. 
+    ● Developed and presented business cases to senior boards, showcasing analytical and decision-making 
+    skills. 
+    Contract Programs Administrator · AOAC INTERNATIONAL | Dec '05 - Dec '09 
+    ● Provided project management support for federally funded analytical standards development projects. 
+    ● Stakeholder's primary point of contact for AOAC Stakeholder Panel on Agent Detection Assays (SPADA). 
+    ● Collaborated with scientists from government, industry and academia to build consensus on scientific 
+    standards. 
+    Education 
+    Flatiron School | Certificate in Software Engineering | Grad 2020 
+    McGill University | Bachelor of Arts, Political Science and History | Grad 2004 
+    Relevant Professional Development `
+    
+ 
+
+
+
+
 
   const persona = `
 You are chatting with Christopher Dent...

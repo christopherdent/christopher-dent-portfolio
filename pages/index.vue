@@ -11,7 +11,7 @@
     <UGrid align="center" class="hero-inner max-w-screen-2xl px-4 py-8 hero-gap">
       
 
-      <UGridItem cols="12" md="6" class="flex flex-col items-center text-center">
+       <div class="col-span-12 md:col-span-6">
         <!-- Header -->
         <h1 
         class="heading-hover-effect text-shadow-md text-4xl font-bold text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
@@ -61,10 +61,10 @@
             View Projects
           </UButton>
         </div>
-      </UGridItem>
+      </div>
 
 
-      <UGridItem cols="12" md="6" class="flex flex-col items-center">
+       <div class="col-span-12 md:col-span-6">
         <img
           src="https://cjdportfolio.s3.us-east-1.amazonaws.com/hero_portfolio.png"
           alt="Christopher Dent Hero"
@@ -74,7 +74,7 @@
         <div class="mt-6 pt-6">
           <ThemeToggle v-model="selectedTheme" />
         </div>
-      </UGridItem>
+      </div>
     </UGrid>
     <UText class="mt-25 text-gray-600 dark:text-gray-400 text-sm text-center">
       © {{ new Date().getFullYear() }} Christopher Dent
