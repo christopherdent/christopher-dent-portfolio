@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const { question } = await readBody<{ question: string }>(event)
 
   // READ from public/ instead of server/utils:
-  const resumePath = path.resolve(process.cwd(), 'public/resumeText.txt')
+   const resumePath = path.resolve(process.cwd(), 'server/utils/resumeText.txt')
   const resumeText = await readFile(resumePath, 'utf-8')
 
   const persona = `
