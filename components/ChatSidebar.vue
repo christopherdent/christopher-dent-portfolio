@@ -7,6 +7,7 @@
       <h2 class="text-3xl font-extrabold font-sans mb-2">
         Ask ChrisBot
       </h2>
+      <small><span style="color:gray">Ask questions about the resume and get instant answers from ChrisBot, your AI guide.</span></small>
     </div>
 
 

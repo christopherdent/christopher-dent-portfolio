@@ -1,4 +1,3 @@
-
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
     <!-- Header with better spacing and shadow -->
@@ -8,22 +7,25 @@
         Dent Home
       </a>
     </header>
-   <!-- ── MAIN LAYOUT: stacks on mobile, splits 50/50 on lg+ ─────────────── -->
+    <!-- ── MAIN LAYOUT: stacks on mobile, splits 50/50 on lg+ ─────────────── -->
     <div class="flex flex-col lg:flex-row h-[calc(100vh-5rem)]">
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4 flex flex-col">
         <div class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-hidden">
           <!-- pdf viewer itself (fills parent) -->
-          <PdfViewer :file="resumeUrl" /> 
+          <PdfViewer :file="resumeUrl" />
         </div>
       </section>
 
       <!-- ─────────────── CHAT PANEL ─────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4">
         <!-- feel free to keep your original classes here -->
-        <UContainer
-          class="chat-container bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl p-6 text-gray-100"
-        >
+        <UContainer class="chat-container
+             flex-1
+             bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl
+             p-6 pb-12   
+             overflow-auto 
+             text-gray-100">
           <ChatSidebar />
         </UContainer>
       </section>
