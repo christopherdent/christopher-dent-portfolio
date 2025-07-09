@@ -52,7 +52,7 @@
                      variant="ghost"
                      class="shadow-xl font-semibold"
                      to="/resume">
-              View Resume
+              Interactive Resume
             </UButton>
           </UTooltip>
 
