@@ -3,7 +3,7 @@
   <div class="w-full h-full flex flex-col">
     <!-- ── WHITE CARD (fills vertically because of flex-1) ──────────────── -->
     <div
-      class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-hidden"
+      class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-auto" 
       style="aspect-ratio: 8.5/11;"
     >
       <!-- toolbar (unchanged) -->
