@@ -8,7 +8,7 @@
       </a>
     </header>
     <!-- ── MAIN LAYOUT: stacks on mobile, splits 50/50 on lg+ ─────────────── -->
-    <div class="flex flex-col lg:flex-row h-[calc(100vh-5rem)]">
+    <div class="flex flex-col lg:flex-row lg:items-center h-[calc(100vh-5rem)]">
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4 flex flex-col">
         <div class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-hidden">
@@ -18,15 +18,16 @@
       </section>
 
       <!-- ─────────────── CHAT PANEL ─────────────────────────────────────── -->
-      <section class="w-full lg:w-1/2 p-4">
+      <section class="w-full lg:w-1/2 p-4 flex justify-center">
         <!-- feel free to keep your original classes here -->
-        <UContainer 
-            class="chat-container
-             flex-1flex flex-col w-full          
-             bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl
-             p-6 pb-12   
-             overflow-auto 
-             text-gray-100">
+        <UContainer class="chat-container
+           flex flex-col
+           w-full   
+           lg:max-w-[75%]
+           h-[80vh] lg:h-full 
+           bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl
+           p-6 text-gray-100
+           overflow-hidden">
           <ChatSidebar />
         </UContainer>
       </section>

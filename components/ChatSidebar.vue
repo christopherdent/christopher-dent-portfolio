@@ -13,10 +13,7 @@
 
     
     <!-- Chat log -->
-    <div
-      ref="log"
-      class="flex-grow overflow-y-auto p-4 space-y-3 text-sm"
-    >
+    <div ref="log" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
       <div
         v-for="(msg,i) in messages"
         :key="i"
@@ -31,7 +28,7 @@
     <!-- Input box -->
     <form
       @submit.prevent="submitQuestion"
-      class="border-t p-4 flex gap-2"
+      class="border-t p-4 flex gap-2 shrink-0"
     >
       <input
         v-model="draft"
