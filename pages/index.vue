@@ -1,8 +1,6 @@
 <template>
   <UContainer class="hero-container shadow-md rounded-xl transition-all duration-500"
               size="full"
-              @mouseover="isHovered = true"
-              @mouseleave="isHovered = false"
               :style="containerStyle">
 
 
@@ -89,9 +87,13 @@
              alt="Christopher Dent Hero"
              class="hero-image h-[66vh] w-auto object-contain rounded-xl shadow-xl" />
         <!-- Centered Theme Toggle under the image -->
-        <div class="mt-6 pt-6">
-          <ThemeToggle v-model="selectedTheme" />
-        </div>
+<div class="mt-6 pt-6">
+  <!-- <UText size="sm" class="text-gray-500 dark:text-gray-400 text-center" style=" font-family: Roboto, sans-serif;">Theme Picker</UText> -->
+   <UText size="sm" class="text-gray-500 dark:text-gray-400 text-center picker-text">Theme Picker</UText>
+  <div class="flex justify-center mt-2">
+    <ThemeToggle v-model="selectedTheme" />
+  </div>
+</div>
       </div>
     </UGrid>
     <UText class="mt-25 text-gray-600 dark:text-gray-400 text-sm text-center">
@@ -135,17 +137,13 @@ const headingColorClass = computed(() => {
 
 // compute inline style for background and glow
 const containerStyle = computed(() => {
-  if (isHovered.value) {
-    const colors = themeColors[selectedTheme.value] || ['#0d1117', '#0d1117'];
-    return {
-      backgroundImage: `linear-gradient(to bottom right, ${colors.join(', ')})`,
-      boxShadow: `0 0 20px rgba(255, 255, 255, 0.3)`
-    };
-  }
+  const colors = themeColors[selectedTheme.value] || ['#0d1117', '#0d1117'];
   return {
-    backgroundColor: '#0d1117'
+    backgroundImage: `linear-gradient(to bottom right, ${colors.join(', ')})`,
+    boxShadow: `0 0 20px rgba(255, 255, 255, 0.3)`
   };
 });
+
 </script>
 
 <style scoped>
@@ -166,5 +164,11 @@ const containerStyle = computed(() => {
 .hero-image:hover {
   filter: brightness(1.1);
   box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+}
+
+.picker-text {
+  font-family: 'Audiowide', sans-serif !important;
+  font-weight: 100;
+  transition: color 0.3s ease-in-out;
 }
 </style>

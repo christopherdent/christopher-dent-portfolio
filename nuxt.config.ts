@@ -4,21 +4,22 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/icon'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/icon', '@nuxt/fonts'],
   css: ['~/assets/css/main.css'],
+  fonts: {
+    families: [
+      { name: 'Inter', provider: 'google' },
+      { name: 'Monoton', provider: 'google' },
+      { name: 'Audiowide', provider: 'google' },
+      { name: 'Zen Dots', provider: 'google' }
+    ]
+  },
   app: {
     head: {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap'
-        }
-      ],
       script: [
         { src: 'https://cdn.jsdelivr.net/npm/three/build/three.min.js', defer: true },
         { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js', defer: true }
       ]
-    },
-    
+    }
   }
 });
