@@ -41,6 +41,7 @@
     </div>
 
     <!-- ── PAGINATION (optional) ─────────────────────────────────────────── -->
+<!-- pagination -->
 <div v-if="!loading"
      class="flex items-center justify-center gap-4 mt-4">
   <button
@@ -67,6 +68,8 @@
     Next
   </button>
 </div>
+
+  </div>
 </template>
 
 <script setup lang="ts">
