@@ -1,8 +1,4 @@
-<script setup>
-import ChatSidebar from '../components/ChatSidebar';
-import PdfViewer from '../components/PdfViewer.vue';
-const resumeUrl = '/pdf/ChristopherDentResume.pdf';
-</script>
+
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
     <!-- Header with better spacing and shadow -->
@@ -13,14 +9,12 @@ const resumeUrl = '/pdf/ChristopherDentResume.pdf';
       </a>
     </header>
    <!-- ── MAIN LAYOUT: stacks on mobile, splits 50/50 on lg+ ─────────────── -->
-    <!--  ⭐  h-[calc(100vh-5rem)] = full viewport minus ~ header height      -->
     <div class="flex flex-col lg:flex-row h-[calc(100vh-5rem)]">
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
-      <!--  ⭐  flex-col + flex-1 lets the white card fill remaining height   -->
       <section class="w-full lg:w-1/2 p-4 flex flex-col">
         <div class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-hidden">
           <!-- pdf viewer itself (fills parent) -->
-          <PdfViewer :file="resumeUrl" /> <!-- ⭐ NEW -->
+          <PdfViewer :file="resumeUrl" /> 
         </div>
       </section>
 
@@ -36,3 +30,9 @@ const resumeUrl = '/pdf/ChristopherDentResume.pdf';
     </div>
   </div>
 </template>
+
+<script setup>
+import ChatSidebar from '../components/ChatSidebar';
+import PdfViewer from '../components/PdfViewer.vue';
+const resumeUrl = '/pdf/ChristopherDentResume.pdf';
+</script>
