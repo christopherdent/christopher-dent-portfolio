@@ -20,8 +20,9 @@
       <!-- ─────────────── CHAT PANEL ─────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4">
         <!-- feel free to keep your original classes here -->
-        <UContainer class="chat-container
-             flex-1
+        <UContainer 
+            class="chat-container
+             flex-1flex flex-col w-full          
              bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl
              p-6 pb-12   
              overflow-auto 
