@@ -14,8 +14,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* If you’re using Tailwind’s class-based dark mode,
-   swap this media query for the .dark selector: */
 html.dark body {
   background: linear-gradient(to bottom right, #1e293b, #4c1d95);
 }
@@ -38,8 +36,8 @@ html.dark body {
   max-width: 75%;
   margin: 0 auto;
   transition: all 0.5s ease;
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* shadow-md */
+  border-radius: 0.75rem; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
 }
 @media (prefers-color-scheme: dark) {
   .hero-container {
@@ -57,8 +55,8 @@ html.dark body {
   width: 100%;
   margin: 0 auto;
   transition: all 0.5s ease;
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* shadow-md */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to bottom right, #111827, #1f2937);
 }
 
@@ -75,7 +73,7 @@ html.dark body {
   justify-content: center;
   gap: 3rem;
   width: 100%;
-  padding-top: 5rem; /* add this */
+  padding-top: 5rem; 
 }
 
 @media (min-width: 768px) {
@@ -86,19 +84,30 @@ html.dark body {
   }
 }
 
-/* Default – no extra horizontal gap */
+
 .hero-gap {
-  row-gap: 3rem;      /* keep your vertical spacing */
+  row-gap: 3rem;
 }
 
 /* Only from xl and up */
 @media (min-width: 1980px) {
   .hero-gap {
-    column-gap: 10rem; /* big 10-rem gap on wide screens */
+    column-gap: 10rem;
   }
 }
 
 
 .action-toolbar {
   @apply absolute top-2 right-2 z-10 flex space-x-2 bg-white/80 p-1 rounded;
+}
+
+
+.my-journey {
+  font-family: 'Passion One', cursive;
+}
+
+.passions-conflict-regular {
+  font-family: "Passions Conflict", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
