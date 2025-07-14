@@ -3,7 +3,7 @@
     <!-- Header with better spacing and shadow -->
     <header class="w-full flex justify-center py-8 bg-white/80 backdrop-blur-sm shadow-sm">
       <a href="/"
-         class="text-4xl font-bold text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105">
+         class="text-8xl font-bold text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 passions-conflict-regular">
         Dent Home
       </a>
     </header>

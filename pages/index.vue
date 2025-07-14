@@ -57,7 +57,7 @@
           </UTooltip>
 
           <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Coming soon"
+                    text="Learn more about Chris"
                     class="tooltip-content">
             <UButton icon="i-lucide-file-user"
                      size="lg"
