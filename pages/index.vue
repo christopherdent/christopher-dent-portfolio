@@ -63,7 +63,8 @@
                      size="lg"
                      color="primary"
                      variant="ghost"
-                     class="shadow-xl font-semibold">
+                     class="shadow-xl font-semibold"
+                     to="/about">
               Read Bio
             </UButton>
           </UTooltip>
