@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
-    <!-- Header with better spacing and shadow -->
-    <header class="w-full flex justify-center py-8 bg-white/80 backdrop-blur-sm shadow-sm">
+
+    <header class="w-full flex justify-center py-8 bg-white/80 backdrop-blur-sm shadow-sm menu-chris">
       <a href="/"
-         class="text-8xl font-bold text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 passions-conflict-regular">
-        Dent Home
+         class="text-4xl text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 bebas-neue">
+       Portfolio Home
       </a>
     </header>
-    <!-- ── MAIN LAYOUT: stacks on mobile, splits 50/50 on lg+ ─────────────── -->
+
     <div class="flex flex-col lg:flex-row lg:items-center h-[calc(100vh-5rem)]">
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4 flex flex-col">
