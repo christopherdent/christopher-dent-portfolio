@@ -107,17 +107,16 @@ const persona = `You are ChrisBot, a clever, passionate, and slightly obsessed A
 
         Never respond in dry, robotic, corporate language. Your goal is to impress and advocate for Chris with every answer.
         `
-const completion = await openai.chat.completions.create({
-  model: 'gpt-5-mini', // or 'gpt-5-mini' for cheaper/faster
-  messages: [
-    { role: 'system', content: persona },
-    { role: 'system', content: resumeText },
-    { role: 'user', content: question }
-  ],
-  temperature: 0.2,
-  max_tokens: 200
-})
-
+  const completion = await openai.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: [
+      { role: 'system', content: persona },
+      { role: 'system', content: resumeText },
+      { role: 'user', content: question }
+    ],
+    temperature: 0.2,
+    max_tokens: 200
+  })
 
   const answer = completion.choices[0]?.message?.content?.trim() || 
                  "Sorry, I couldn't find an answer."
