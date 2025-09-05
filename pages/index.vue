@@ -69,16 +69,20 @@
             </UButton>
           </UTooltip>
           <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Coming soon"
+                    text="Open the live VolunteerManager app"
                     class="tooltip-content">
             <UButton icon="i-lucide-laptop"
                      size="lg"
                      color="primary"
                      variant="ghost"
-                     class="shadow-xl font-semibold">
-              View Projects
+                     class="shadow-xl font-semibold"
+                     :href="projectUrl"
+                     target="_blank"
+                     rel="noopener noreferrer">
+              View Project
             </UButton>
           </UTooltip>
+
         </div>
       </div>
 
@@ -88,13 +92,14 @@
              alt="Christopher Dent Hero"
              class="hero-image h-[66vh] w-auto object-contain rounded-xl shadow-xl" />
         <!-- Centered Theme Toggle under the image -->
-<div class="mt-6 pt-6">
-  <!-- <UText size="sm" class="text-gray-500 dark:text-gray-400 text-center" style=" font-family: Roboto, sans-serif;">Theme Picker</UText> -->
-   <UText size="sm" class="text-gray-500 dark:text-gray-400 text-center picker-text">Theme Picker</UText>
-  <div class="flex justify-center mt-2">
-    <ThemeToggle v-model="selectedTheme" />
-  </div>
-</div>
+        <div class="mt-6 pt-6">
+          <!-- <UText size="sm" class="text-gray-500 dark:text-gray-400 text-center" style=" font-family: Roboto, sans-serif;">Theme Picker</UText> -->
+          <UText size="sm"
+                 class="text-gray-500 dark:text-gray-400 text-center picker-text">Theme Picker</UText>
+          <div class="flex justify-center mt-2">
+            <ThemeToggle v-model="selectedTheme" />
+          </div>
+        </div>
       </div>
     </UGrid>
     <UText class="mt-25 text-gray-600 dark:text-gray-400 text-sm text-center">
@@ -106,6 +111,10 @@
 <script setup>
 import { ref, computed } from 'vue';
 import ThemeToggle from '~/components/ThemeToggle.vue';
+
+
+const projectUrl =
+  'https://consistent-robinetta-christopherdent-69ec9810.koyeb.app/'
 
 // track hover state
 const isHovered = ref(false);
