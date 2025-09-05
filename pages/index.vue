@@ -79,7 +79,7 @@
                      :href="projectUrl"
                      target="_blank"
                      rel="noopener noreferrer">
-              View Project
+              View Demo Project
             </UButton>
           </UTooltip>
 
