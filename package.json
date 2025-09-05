@@ -18,7 +18,7 @@
     "gsap": "^3.13.0",
     "lottie-web": "^5.13.0",
     "nuxt": "^3.17.6",
-    "openai": "^5.8.2",
+    "openai": "^5.12.2",
     "oxc-parser": "^0.76.0",
     "pdf-extraction": "^1.0.2",
     "pdf-parse": "^1.1.1",
