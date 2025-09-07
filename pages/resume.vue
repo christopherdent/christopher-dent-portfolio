@@ -1,12 +1,10 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
+<UContainer class="hero-container min-h-screen shadow-md rounded-xl transition-all duration-500" size="full">
 
-    <header class="w-full flex justify-center py-8 bg-white/80 backdrop-blur-sm shadow-sm menu-chris">
-      <a href="/"
-         class="text-4xl text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 bebas-neue">
-       Portfolio Home
-      </a>
-    </header>
+    <a href="/"
+       class="hover:text-blue-800 transition-all duration-300 hover:scale-105 menu-chris mb-4">
+      Portfolio Home
+    </a>
 
     <div class="flex flex-col lg:flex-row lg:items-center h-[calc(100vh-5rem)]">
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
@@ -32,11 +30,13 @@
         </UContainer>
       </section>
     </div>
-  </div>
+</UContainer>
 </template>
 
 <script setup>
 import ChatSidebar from '../components/ChatSidebar';
 import PdfViewer from '../components/PdfViewer.vue';
+import { useTheme } from '~/composables/useTheme'
+const { theme } = useTheme()
 const resumeUrl = '/pdf/ChristopherDentResume.pdf';
 </script>

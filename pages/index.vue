@@ -1,16 +1,14 @@
 <template>
   <UContainer class="hero-container shadow-md rounded-xl transition-all duration-500"
               size="full"
-              :style="containerStyle">
+              >
 
     <UGrid align="center" class="hero-inner max-w-screen-2xl px-4 py-8 hero-gap">
 
       <!-- Left: Title, subtitles, buttons -->
       <div class="hero-left">
         <!-- Header -->
-        <h1
-          class="heading-hover-effect text-shadow-md text-4xl font-bold text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
-          :class="headingColorClass">
+        <h1 class="heading-hover-effect heading-theme text-shadow-md text-4xl font-bold text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
           Christopher James Dent
         </h1>
 
@@ -97,7 +95,7 @@
         <div class="mt-6 pt-6 w-full">
           <div class="text-sm text-gray-500 dark:text-gray-400 text-center picker-text">Theme Picker</div>
           <div class="flex justify-center mt-2">
-            <ThemeToggle v-model="selectedTheme" />
+            <ThemeToggle v-model="theme" />
           </div>
         </div>
       </div>
@@ -112,45 +110,16 @@
 <script setup>
 import { ref, computed } from 'vue';
 import ThemeToggle from '~/components/ThemeToggle.vue';
+import { useTheme } from '~/composables/useTheme'
+
+const { theme } = useTheme()
 
 const projectUrl = 'https://consistent-robinetta-christopherdent-69ec9810.koyeb.app/';
 
 // track hover state
 const isHovered = ref(false);
 // track selected theme
-const selectedTheme = ref('cosmic');
 
-// define base colors for each theme
-const themeColors = {
-  cosmic: ['#1e293b', '#4c1d95'],
-  neon: ['#0f172a', '#10b981'],
-  cool: ['#1e293b', '#3b82f6'],
-  psychedelic: ['#ff6b6b', '#845ef7']
-};
-
-const headingColorClass = computed(() => {
-  switch (selectedTheme.value) {
-    case 'cosmic':
-      return 'text-gray-100';
-    case 'neon':
-      return 'text-emerald-300';
-    case 'cool':
-      return 'text-blue-300';
-    case 'psychedelic':
-      return 'text-yellow-300';
-    default:
-      return 'text-white';
-  }
-});
-
-// compute inline style for background and glow
-const containerStyle = computed(() => {
-  const colors = themeColors[selectedTheme.value] || ['#0d1117', '#0d1117'];
-  return {
-    backgroundImage: `linear-gradient(to bottom right, ${colors.join(', ')})`,
-    boxShadow: `0 0 20px rgba(255, 255, 255, 0.3)`
-  };
-});
 </script>
 
 <style scoped>
