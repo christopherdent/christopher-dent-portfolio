@@ -13,31 +13,36 @@
         </h1>
 
         <!-- Subheading / tooltips -->
-        <div class="pt-4">
-          <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Chris re-learned how to code and transitioned into software development after 15 years of managing scientific and technical projects."
-                    class="tooltip-content">
-            <UText size="lg" class="text-gray-500 dark:text-gray-400 font-medium">
-              Software Engineer
-            </UText>
-          </UTooltip>
+     <div class="pt-4 subheading-theme">
+  <UTooltip 
+    :content="{ align: 'center', side: 'top', sideOffset: 8 }"
+    text="Chris re-learned how to code and transitioned into software development after 15 years of managing scientific and technical projects."
+    class="tooltip-content"
+  >
+    <span class="text-lg font-medium">Software Engineer </span>
+  </UTooltip>
 
-          <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Father of two amazing kids. My greatest project."
-                    class="tooltip-content">
-            <UText size="lg" class="text-gray-500 dark:text-gray-400 font-medium">
-              | Dad
-            </UText>
-          </UTooltip>
+  <UTooltip 
+    :content="{ align: 'center', side: 'top', sideOffset: 8 }"
+    text="Father of two amazing kids. My greatest project."
+    class="tooltip-content"
+  >
+    <span class="text-lg font-medium">| Dad </span>
+  </UTooltip>
 
-          <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Certified cat herder."
-                    class="tooltip-content">
-            <UText size="lg" class="text-gray-500 dark:text-gray-400 font-medium">
-              | Project Manager
-            </UText>
-          </UTooltip>
-        </div>
+  <UTooltip 
+    :content="{ align: 'center', side: 'top', sideOffset: 8 }"
+    text="Certified cat herder."
+    class="tooltip-content"
+  >
+    <span class="text-lg font-medium">| Project Manager</span>
+  </UTooltip>
+</div>
+
+
+
+
+        
 
         <!-- Call to Action Buttons -->
         <div class="hero-actions">
