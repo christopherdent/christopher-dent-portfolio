@@ -34,12 +34,11 @@
                 
                 <Transition name="expand">
                     <div v-show="selected === index"
-                         class="mt-2 ml-2 overflow-hidden will-change-transform">
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            {{ item.description }}
-                        </p>
+                        class="mt-2 ml-2 overflow-hidden will-change-transform">
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed"
+                        v-html="item.description"></p>
                     </div>
-                </Transition>
+                    </Transition>
             </div>
         </div>
         </div>
