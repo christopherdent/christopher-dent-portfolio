@@ -4,11 +4,13 @@
 
             <!-- “Ask ChrisBot header -->
     <div class="px-4 pt-4">
-      <h2 class="text-3xl font-extrabold font-sans mb-2">
-        Ask ChrisBot
-      </h2>
-      <small><span style="color:gray">Ask questions about the resume and get instant answers from ChrisBot, your AI guide.</span></small>
-    </div>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-sans mb-2">
+  Ask ChrisBot
+</h2>
+<small class="text-xs sm:text-sm text-gray-400">
+  Ask questions about the resume and get instant answers from ChrisBot, your AI guide.
+</small>
+ </div>
 
 
     

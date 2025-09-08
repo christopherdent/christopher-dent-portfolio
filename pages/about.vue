@@ -14,7 +14,7 @@
       <span class="h-px flex-1 bg-gradient-to-l from-blue-400 via-purple-400 to-pink-400 opacity-70"></span>
     </div>
 
-    <h1 class="heading-theme text-6xl font-bold text-center pb-6 passions-conflict-regular mt-20">~ My Journey ~</h1>
+    <h1 class="subheading-theme font-semibold text-xl sm:text-2xl">~ My Journey ~</h1>
     <div class="flex justify-center">
       <BioTimeline />
     </div>

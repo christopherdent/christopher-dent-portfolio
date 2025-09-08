@@ -6,27 +6,27 @@
       Portfolio Home
     </a>
 
-    <div class="flex flex-col lg:flex-row lg:items-stretch lg:gap-6 w-full min-h-0">
+    <div class="flex flex-col lg:flex-row lg:items-stretch lg:gap-6 w-full">
 
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
-<section class="w-full lg:w-1/2 p-4 flex flex-col h-[60vh] lg:h-auto min-h-0">
+  <section class="w-full lg:w-1/2 p-4 flex flex-col">
   <div class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-auto">
     <PdfViewer :file="resumeUrl" />
   </div>
 </section>
 
       <!-- ─────────────── CHAT PANEL ─────────────────────────────────────── -->
-<section class="w-full lg:w-1/2 p-4 flex justify-center">
-  <UContainer
-    class="chat-container
-      flex flex-col flex-1 min-h-0
-      bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl
-      p-6 text-gray-100"
-  >
-    <ChatSidebar class="flex-1 min-h-0 overflow-auto" />
-</UContainer>
-
-</section>
+  <section class="w-full lg:w-1/2 p-4 flex flex-col">
+<UContainer class="chat-container
+   flex flex-col
+   w-full
+   h-[70vh] sm:h-[80vh] lg:h-full
+   bg-gray-900/80 backdrop-blur-lg shadow-2xl rounded-2xl
+   p-4 sm:p-6 text-gray-100
+   overflow-hidden">
+      <ChatSidebar class="flex-1" />
+    </UContainer>
+  </section>
 
     </div>
  
