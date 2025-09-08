@@ -4,25 +4,47 @@
 
             <!-- “Ask ChrisBot header -->
     <div class="px-4 pt-4">
-      <h2 class="text-3xl font-extrabold font-sans mb-2">
-        Ask ChrisBot
-      </h2>
-      <small><span style="color:gray">Ask questions about the resume and get instant answers from ChrisBot, your AI guide.</span></small>
-    </div>
+<h2 class="text-2xl sm:text-3xl font-extrabold font-sans mb-2">
+  Ask ChrisBot
+</h2>
+<small class="text-xs sm:text-sm text-gray-400">
+  Ask questions about the resume and get instant answers from ChrisBot, your AI guide.
+</small>
+ </div>
 
 
     
-    <!-- Chat log -->
-    <div ref="log" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
-      <div
-        v-for="(msg,i) in messages"
-        :key="i"
-        :class="msg.role === 'user' ? 'text-right' : 'text-left'"
-      >
-        <strong>{{ msg.role === 'user' ? 'You' : 'ChrisBot' }}:</strong>
-        <span>{{ msg.text }}</span>
-      </div>
+<!-- Chat log -->
+<div ref="log" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
+  <div
+    v-for="(msg, i) in messages"
+    :key="i"
+    class="flex"
+    :class="msg.role === 'user' ? 'justify-end' : 'justify-start'"
+  >
+    <div
+      :class="[
+        'rounded-2xl px-4 py-2 max-w-[75%] shadow-md',
+        msg.role === 'user'
+          ? 'bg-blue-500 text-white'
+          : 'bg-gray-200 text-gray-900'
+      ]"
+    >
+      {{ msg.text }}
     </div>
+  </div>
+
+  <!-- Bot typing indicator -->
+  <div v-if="loading" class="flex justify-start">
+    <div class="bg-gray-200 text-gray-900 rounded-2xl px-4 py-2 shadow-md flex items-center gap-1">
+      <span class="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:0ms]"></span>
+      <span class="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:150ms]"></span>
+      <span class="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:300ms]"></span>
+    </div>
+  </div>
+</div>
+
+
 
 
     <!-- Input box -->
@@ -69,14 +91,26 @@ async function submitQuestion() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ question })
     })
-    const { answer } = await res.json()
-    messages.value.push({ role: 'chrisbot', text: answer })
-  } catch {
-    messages.value.push({ role: 'chrisbot', text: 'Error: could not reach API.' })
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`)
+    }
+
+    const data = await res.json()
+    const answer = data?.answer?.trim()
+
+    if (answer) {
+      messages.value.push({ role: 'chrisbot', text: answer })
+    } else {
+      messages.value.push({ role: 'chrisbot', text: 'Connection failed. No response from server.' })
+    }
+  } catch (err) {
+    messages.value.push({ role: 'chrisbot', text: 'Connection failed. Please try again later.' })
   } finally {
     loading.value = false
   }
 }
+
 
 // auto-scroll on new message
 watch(messages, async () => {

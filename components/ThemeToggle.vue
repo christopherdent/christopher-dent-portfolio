@@ -20,6 +20,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useTheme } from '~/composables/useTheme'
 
 // receive v-model value
 const props = defineProps({
@@ -40,6 +41,8 @@ const themes = [
   { label: 'Psychedelic Boost', value: 'psychedelic', preview: 'bg-gradient-to-br from-[#ff6b6b] via-[#f06595] to-[#845ef7]' }
 ]
 
+const { theme, setTheme } = useTheme()
+
 // proxy for two-way binding
 const selected = computed({
   get() {
@@ -53,7 +56,7 @@ const selected = computed({
 // swatch size (customizable if you want)
 const swatchSize = 'w-6 h-6'
 
-// manual select handler
+// // manual select handler
 function selectTheme(val) {
   selected.value = val
 }

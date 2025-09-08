@@ -82,7 +82,7 @@ const timelineItems = [
     },
     {
         title: 'Contact & Connect',
-        description: 'Want to connect to talk about a project? Or maybe just a coffee and Teams chat? I\'d love to hear from you! Reach out via the contact form on my portfolio site or connect with me on LinkedIn.',
+        description: 'Want to connect to talk about a project? Or maybe just a coffee and Teams chat? I\'d love to hear from you! Reach out via <a href="mailto:christopherdent01@gmail.com">email</a>  or connect with me on <a href="https://www.linkedin.com/in/christopher-james-dent/" target="_blank">LinkedIn.</a>',
     },
 ]
 </script>
