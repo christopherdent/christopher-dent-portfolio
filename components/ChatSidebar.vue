@@ -8,7 +8,7 @@
   Ask ChrisBot
 </h2>
 <small class="text-xs sm:text-sm text-gray-400">
-  Ask questions about the resume and get instant answers from ChrisBot, your AI guide.
+  Ask questions about the resume and get instant answers from ChrisBot, your AI guide. He promises to give you fair and balanced answers about his creator… mostly.
 </small>
  </div>
 
