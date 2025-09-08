@@ -39,62 +39,23 @@
   </UTooltip>
 </div>
 
+          <LinkList />
 
-
-
-        
-
-        <!-- Call to Action Buttons -->
-        <div class="hero-actions">
-          <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="check out my new interactive resume!"
-                    class="tooltip-content">
-            <UButton icon="i-lucide-scroll-text"
-                     size="lg"
-                     color="primary"
-                     variant="ghost"
-                     class="shadow-xl font-semibold"
-                     to="/resume">
-              Interactive Resume
-            </UButton>
-          </UTooltip>
-
-          <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Learn more about Chris"
-                    class="tooltip-content">
-            <UButton icon="i-lucide-file-user"
-                     size="lg"
-                     color="primary"
-                     variant="ghost"
-                     class="shadow-xl font-semibold"
-                     to="/about">
-              Read Bio
-            </UButton>
-          </UTooltip>
-
-          <UTooltip :content="{ align: 'center', side: 'top', sideOffset: 8 }"
-                    text="Open the live VolunteerManager app"
-                    class="tooltip-content">
-            <UButton icon="i-lucide-laptop"
-                     size="lg"
-                     color="primary"
-                     variant="ghost"
-                     class="shadow-xl font-semibold"
-                     :href="projectUrl"
-                     target="_blank"
-                     rel="noopener noreferrer">
-              View Demo Project
-            </UButton>
-          </UTooltip>
-        </div>
+        <!-- </div> -->
       </div>
 
       <!-- Right: Hero + Theme Picker -->
-      <div class="hero-right">
-        <img
+      <div class="hero-right mt-8">
+        <!-- <img
           src="https://cjdportfolio.s3.us-east-1.amazonaws.com/hero_portfolio.png"
           alt="Christopher Dent Hero"
-          class="hero-image mx-auto rounded-xl shadow-xl w-auto h-[40vh] sm:h-[48vh] md:h-[56vh] 2xl:h-[66vh] object-contain" />
+          class="hero-image mx-auto rounded-xl shadow-xl w-auto h-[40vh] sm:h-[48vh] md:h-[56vh] 2xl:h-[66vh] object-contain" /> -->
+          <img
+  src="https://cjdportfolio.s3.us-east-1.amazonaws.com/hero_portfolio.png"
+  alt="Christopher Dent Hero"
+  class="hero-image mx-auto rounded-xl shadow-xl w-auto h-[40vh] sm:h-[48vh] md:h-[56vh] 2xl:h-[66vh] object-contain lg:mt-8"
+/>
+
 
         <!-- Centered Theme Toggle under the image -->
         <div class="mt-6 pt-6 w-full">

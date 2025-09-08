@@ -17,6 +17,7 @@
     "eslint": "^9.29.0",
     "gsap": "^3.13.0",
     "lottie-web": "^5.13.0",
+    "lucide-vue-next": "^0.542.0",
     "nuxt": "^3.17.6",
     "openai": "^5.12.2",
     "oxc-parser": "^0.76.0",
