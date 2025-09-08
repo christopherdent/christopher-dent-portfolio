@@ -118,7 +118,7 @@ He uses the OpenAI API and runs on Nuxt 3 with serverless functions.
 `;
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4o",
     messages: [
       { role: "system", content: persona },
       { role: "system", content: resumeText },
