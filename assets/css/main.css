@@ -13,7 +13,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* ---------------- Typography Helpers ---------------- */
 .my-journey {
   font-family: 'Passion One', cursive;
 }
@@ -30,7 +29,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* ---------------- Themes ---------------- */
 [data-theme="cosmic"] {
   --bg1: #1e293b;
   --bg2: #4c1d95;
@@ -59,7 +57,6 @@ body {
   --subheading-color: #fcd34d;
 }
 
-/* ---------------- Hero Container ---------------- */
 .hero-container {
   background: linear-gradient(to bottom right, var(--bg1), var(--bg2)) !important;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -76,7 +73,6 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* constrain width only at lg+ */
 @media (min-width: 1024px) {
   .hero-container {
     max-width: 75%;
@@ -96,13 +92,12 @@ h1 {
   color: var(--subheading-color);
 }
 
-/* ---------------- Chat Container ---------------- */
 .chat-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 60vh;
-  padding: 1rem; /* lighter on mobile */
+  padding: 1rem;
   margin: 0 auto;
   border-radius: 0.75rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
@@ -118,13 +113,42 @@ h1 {
   }
 }
 
-/* Theming applied inside chat panel */
 .chat-theme {
   background: var(--chat-bg);
   color: var(--chat-text);
-  backdrop-filter: blur(1rem); /* frosted glass effect */
+  backdrop-filter: blur(1rem);
 }
 
 .action-toolbar {
   @apply absolute top-2 right-2 z-10 flex space-x-2 bg-white/80 p-1 rounded;
+}
+
+:root {
+  --font-display: "Staatliches", "Anton SC", "Staatliches", Arial, sans-serif;
+}
+
+h1,
+.hero-header,
+.page-title {
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+.page-title--landing {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+.page-title--section {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.page-title--section {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.2rem + 1vw, 2.5rem);
 }

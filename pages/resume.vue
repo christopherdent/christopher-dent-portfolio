@@ -3,9 +3,10 @@
               size="full">
 
     <a href="/"
-       class="hover:text-blue-800 transition-all duration-300 hover:scale-105 menu-chris mb-4">
+      class="page-title page-title--section heading-theme heading-hover-effect text-shadow-md hover:text-blue-800 transition-all duration-300 hover:scale-105 mb-4">
       Portfolio Home
     </a>
+
 
     <div class="flex flex-col lg:flex-row lg:items-stretch lg:gap-6 w-full h-[80vh]">
 

@@ -127,7 +127,7 @@ He uses the OpenAI API and runs on Nuxt 3 with serverless functions.
       { role: "system", content: metaNote },
       { role: "user", content: userQuestion },
     ],
-    temperature: 0.5,
+    temperature: 0.4,
     max_tokens: 500,
   });
 
