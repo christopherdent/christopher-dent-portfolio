@@ -152,3 +152,19 @@ h1,
   font-weight: 700;
   font-size: clamp(1.75rem, 1.2rem + 1vw, 2.5rem);
 }
+
+
+@media (max-width: 640px) {
+  .chat-container {
+    min-height: auto !important;
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    border-radius: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}

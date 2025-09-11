@@ -8,7 +8,8 @@
     </a>
 
 
-    <div class="flex flex-col lg:flex-row lg:items-stretch lg:gap-6 w-full h-[80vh]">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-stretch w-full min-h-[85vh]">
+
 
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4 flex flex-col">
