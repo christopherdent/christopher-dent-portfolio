@@ -161,10 +161,17 @@ h1,
   }
 }
 
+
 @media (max-width: 1024px) {
   .hero-container {
     border-radius: 0 !important;
     padding: 0 !important;
     max-width: 100% !important;
+  }
+
+  /* keep chat card looking clean inside full-bleed purple */
+  .chat-container {
+    margin: 1rem !important;
+    border-radius: 0.75rem !important;
   }
 }
