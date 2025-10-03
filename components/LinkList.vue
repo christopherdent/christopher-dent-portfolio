@@ -11,7 +11,7 @@
         :href="item.href"
         :target="item.external ? '_blank' : '_self'"
         rel="noopener noreferrer"
-        class="group flex items-center space-x-3 text-lg font-semibold transition-transform duration-300 hover:translate-x-2"
+        class="group flex items-center space-x-3 text-lg font-semibold text-gray-300 transition-transform duration-300 hover:translate-x-2"
       >
         <component
           :is="item.icon"
