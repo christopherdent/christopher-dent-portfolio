@@ -14,7 +14,11 @@
       <!-- ─────────────── PDF PANEL ──────────────────────────────────────── -->
       <section class="w-full lg:w-1/2 p-4 flex flex-col">
         <div class="relative flex-1 rounded-2xl shadow-xl bg-white overflow-auto">
-          <PdfViewer :file="resumeUrl" />
+          <PdfViewer
+            :seFile="seResumeUrl"
+            :tpmFile="tpmResumeUrl"
+          />
+
         </div>
       </section>
 
@@ -39,5 +43,18 @@ import ChatSidebar from '../components/ChatSidebar';
 import PdfViewer from '../components/PdfViewer.vue';
 import { useTheme } from '~/composables/useTheme';
 const { theme } = useTheme();
-const resumeUrl = '/pdf/ChristopherDentResume.pdf';
+
+
+ const config = useRuntimeConfig()
+console.log("Resume config:", config.public)
+console.log("SE resume var:", config.public.RESUME_SOFTWARE_ENGINEER_URL)
+console.log("TPM resume var:", config.public.RESUME_TPM_URL)
+
+
+console.log("Resume config:", config.public)
+
+// ✅ These read from the env at runtime — no hardcoding
+const seResumeUrl  = config.public.RESUME_SOFTWARE_ENGINEER_URL
+const tpmResumeUrl  = config.public.RESUME_TPM_URL
+
 </script>
