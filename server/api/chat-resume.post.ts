@@ -1,10 +1,17 @@
 import { defineEventHandler, readBody } from 'h3'
 import { openai } from '~/utils/openaiClient'
+// @ts-ignore: no types available for 'pdf-parse'
+import pdfParse from 'pdf-parse'
+
+let cache: { seText?: string; tpmText?: string; loadedAt?: number } = {}
+const CACHE_TTL = 1000 * 60 * 60 * 6 // 6 hours
 
 export default defineEventHandler(async (event) => {
   const { question, resumeType } = await readBody<{ question: string, resumeType?: 'se' | 'tpm' }>(event)
 
-  // Fetch both resumes in parallel
+// Use cache if still fresh
+const now = Date.now()
+if (!cache.loadedAt || now - cache.loadedAt > CACHE_TTL) {
   const [seRes, tpmRes] = await Promise.all([
     fetch(process.env.RESUME_SOFTWARE_ENGINEER_URL!),
     fetch(process.env.RESUME_TPM_URL!)
@@ -13,7 +20,27 @@ export default defineEventHandler(async (event) => {
   if (!seRes.ok || !tpmRes.ok)
     throw new Error('Failed to fetch one or both resume files')
 
-  const [seText, tpmText] = await Promise.all([seRes.text(), tpmRes.text()])
+  const [seBuf, tpmBuf] = await Promise.all([
+    seRes.arrayBuffer(),
+    tpmRes.arrayBuffer()
+  ])
+
+  // Extract text from PDFs
+  const [seTextParsed, tpmTextParsed] = await Promise.all([
+    pdfParse(Buffer.from(seBuf)),
+    pdfParse(Buffer.from(tpmBuf))
+  ])
+
+  cache = {
+    seText: seTextParsed.text.trim(),
+    tpmText: tpmTextParsed.text.trim(),
+    loadedAt: now
+  }
+
+  console.info('[chat-resume] loaded and cached resumes')
+}
+
+const { seText, tpmText } = cache
 
   // Merge them — the model sees the full picture
   const combinedResume = `

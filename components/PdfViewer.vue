@@ -62,45 +62,53 @@ import { ref, watch, nextTick } from 'vue'
 import VuePdfEmbed from 'vue-pdf-embed'
 import type { PDFDocumentProxy } from 'pdfjs-dist'
 
-const props = defineProps<{
-  seFile: string
-  tpmFile: string
-}>()
+const props = defineProps<{ file: string }>()
+
 
 const pdfViewer = ref<InstanceType<typeof VuePdfEmbed> | null>(null)
 const source = ref<string | null>(null)
 const currentPage = ref(1)
 const pageCount = ref(1)
 const loading = ref(true)
-const selectedResume = ref<'se' | 'tpm'>('se')
+// const selectedResume = ref<'se' | 'tpm'>('se')
 
-const emit = defineEmits(['resumeChange'])
+// const emit = defineEmits(['resumeChange'])
 
-function emitSelection() {
-  emit('resumeChange', selectedResume.value)
-}
+// function emitSelection() {
+//   emit('resumeChange', selectedResume.value)
+// }
 
 function onLoaded(pdf: PDFDocumentProxy) {
   pageCount.value = pdf.numPages
   loading.value = false
 }
 
-// ✅ Initialize default resume
+// // ✅ Initialize default resume
+// watch(
+//   () => [props.seFile, props.tpmFile],
+//   ([se, tpm]) => {
+//     if (se && tpm && !source.value) source.value = se
+//   },
+//   { immediate: true }
+// )
+
+// // ✅ Watch dropdown changes (single safe watcher)
+// watch(selectedResume, async (val) => {
+//   loading.value = true
+//   await nextTick()
+//   source.value = val === 'tpm' ? props.tpmFile : props.seFile
+//   currentPage.value = 1
+// })
 watch(
-  () => [props.seFile, props.tpmFile],
-  ([se, tpm]) => {
-    if (se && tpm && !source.value) source.value = se
+  () => props.file,
+  (newFile) => {
+    if (!newFile) return
+    loading.value = true
+    currentPage.value = 1
+    source.value = newFile
   },
   { immediate: true }
 )
-
-// ✅ Watch dropdown changes (single safe watcher)
-watch(selectedResume, async (val) => {
-  loading.value = true
-  await nextTick()
-  source.value = val === 'tpm' ? props.tpmFile : props.seFile
-  currentPage.value = 1
-})
 
 function nextPage() {
   if (currentPage.value < pageCount.value) currentPage.value++
