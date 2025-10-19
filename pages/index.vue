@@ -8,7 +8,7 @@
       <div class="hero-left">
         <!-- Header -->
         <h1
-            class="page-title page-title--landing heading-theme heading-hover-effect text-shadow-md text-4xl sm:text-5xl md:text-6xl font-bold">
+            class="page-title page-title--landing heading-theme heading-hover-effect text-shadow-md text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
           Christopher James Dent
         </h1>
 
