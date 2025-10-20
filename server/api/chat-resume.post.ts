@@ -1,48 +1,65 @@
 import { defineEventHandler, readBody } from 'h3'
 import { openai } from '~/utils/openaiClient'
-// @ts-ignore: no types available for 'pdf-parse'
-import pdfParse from 'pdf-parse'
+import { extractText } from 'unpdf'
 
+export const runtime = 'nodejs'
+
+
+// Simple in-memory cache
 let cache: { seText?: string; tpmText?: string; loadedAt?: number } = {}
 const CACHE_TTL = 1000 * 60 * 60 * 6 // 6 hours
 
-export default defineEventHandler(async (event) => {
-  const { question, resumeType } = await readBody<{ question: string, resumeType?: 'se' | 'tpm' }>(event)
+// helper to extract text using unpdf
+async function extractTextFromPdf(url: string) {
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`Failed to fetch PDF: ${url}`)
+  const buffer = await res.arrayBuffer()
+  
+  const result = await extractText(new Uint8Array(buffer))
 
-// Use cache if still fresh
-const now = Date.now()
-if (!cache.loadedAt || now - cache.loadedAt > CACHE_TTL) {
-  const [seRes, tpmRes] = await Promise.all([
-    fetch(process.env.RESUME_SOFTWARE_ENGINEER_URL!),
-    fetch(process.env.RESUME_TPM_URL!)
-  ])
-
-  if (!seRes.ok || !tpmRes.ok)
-    throw new Error('Failed to fetch one or both resume files')
-
-  const [seBuf, tpmBuf] = await Promise.all([
-    seRes.arrayBuffer(),
-    tpmRes.arrayBuffer()
-  ])
-
-  // Extract text from PDFs
-  const [seTextParsed, tpmTextParsed] = await Promise.all([
-    pdfParse(Buffer.from(seBuf)),
-    pdfParse(Buffer.from(tpmBuf))
-  ])
-
-  cache = {
-    seText: seTextParsed.text.trim(),
-    tpmText: tpmTextParsed.text.trim(),
-    loadedAt: now
+  // Normalize result.text into a plain string
+  let textOut = ''
+  if (typeof result.text === 'string') {
+    textOut = result.text
+  } else if (Array.isArray(result.text)) {
+    // sometimes it's an array of page strings or objects
+    textOut = result.text
+      .map((page) => (typeof page === 'string' ? page : page.content || ''))
+      .join('\n')
+  } else if (result.text?.pages) {
+    // sometimes it's { pages: [] }
+    textOut = result.text.pages.join('\n')
+  } else {
+    console.warn('[unpdf] Unexpected text format:', result)
   }
 
-  console.info('[chat-resume] loaded and cached resumes')
+  return textOut.trim()
 }
 
-const { seText, tpmText } = cache
 
-  // Merge them — the model sees the full picture
+export default defineEventHandler(async (event) => {
+  const { question, resumeType } = await readBody<{
+    question: string
+    resumeType?: 'se' | 'tpm'
+  }>(event)
+
+  const now = Date.now()
+
+  // load or refresh cache
+  if (!cache.loadedAt || now - cache.loadedAt > CACHE_TTL) {
+    console.info('[chat-resume] refreshing cache…')
+
+    const [seText, tpmText] = await Promise.all([
+      extractTextFromPdf(process.env.RESUME_SOFTWARE_ENGINEER_URL!),
+      extractTextFromPdf(process.env.RESUME_TPM_URL!),
+    ])
+
+    cache = { seText, tpmText, loadedAt: now }
+    console.info('[chat-resume] cached resumes loaded')
+  }
+
+  const { seText, tpmText } = cache
+
   const combinedResume = `
 === Software Engineer Resume ===
 ${seText}
@@ -65,10 +82,10 @@ Be energetic, admiring, and fun — never robotic.
     messages: [
       { role: 'system', content: persona },
       { role: 'system', content: combinedResume },
-      { role: 'user', content: question }
+      { role: 'user', content: question },
     ],
     temperature: 0.4,
-    max_tokens: 300
+    max_tokens: 300,
   })
 
   const answer =
