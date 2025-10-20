@@ -1,6 +1,6 @@
 <!-- components/LinkList.vue -->
 <template>
-  <nav class="link-list mt-6 space-y-4">
+  <nav class="link-list mt-8 space-y-4">
     <UTooltip
       v-for="item in items"
       :key="item.label"
