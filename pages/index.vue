@@ -2,14 +2,13 @@
   <UContainer class="hero-container shadow-md rounded-xl transition-all duration-500"
               size="full">
 
-    <UGrid align="center"
-           class="hero-inner max-w-screen-2xl px-4 py-8 hero-gap">
+    <div class="hero-inner grid max-w-screen-2xl px-4 py-8 gap-6 items-center">
 
       <!-- Left: Title, subtitles, buttons -->
       <div class="hero-left">
         <!-- Header -->
         <h1
-            class="page-title page-title--landing heading-theme heading-hover-effect text-shadow-md text-4xl sm:text-5xl md:text-6xl font-bold">
+            class="page-title page-title--landing heading-theme heading-hover-effect text-shadow-md text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
           Christopher James Dent
         </h1>
 
@@ -59,11 +58,12 @@
           </div>
         </div>
       </div>
-    </UGrid>
+    </div>
 
-    <UText class="mt-25 text-gray-600 dark:text-gray-400 text-sm text-center">
-      © {{ new Date().getFullYear() }} Christopher Dent
-    </UText>
+<p class="mt-6 text-gray-600 dark:text-gray-400 text-sm text-center">
+  © {{ new Date().getFullYear() }} Christopher Dent
+</p>
+
   </UContainer>
 </template>
 
