@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
-let chris;
 let vantaEffect = null
 const vantaRef = ref(null)
+
 
 onMounted(async () => {
   // Only run on client
