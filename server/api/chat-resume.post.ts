@@ -2,6 +2,7 @@ import { defineEventHandler, readBody } from 'h3'
 import { openai } from '~/utils/openaiClient'
 import { extractText } from 'unpdf'
 import { getSessionId } from '../../utils/getSessionId'
+import { H3Event } from 'h3'
 
 export const runtime = 'nodejs'
 
