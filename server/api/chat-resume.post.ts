@@ -1,6 +1,7 @@
 import { defineEventHandler, readBody } from 'h3'
 import { openai } from '~/utils/openaiClient'
 import { extractText } from 'unpdf'
+import { getSessionId } from '../../utils/getSessionId'
 
 export const runtime = 'nodejs'
 
@@ -37,11 +38,27 @@ async function extractTextFromPdf(url: string) {
 }
 
 
-export default defineEventHandler(async (event) => {
-  const { question, resumeType } = await readBody<{
-    question: string
-    resumeType?: 'se' | 'tpm'
-  }>(event)
+  export default defineEventHandler(async (event) => {
+    const { question, resumeType } = await readBody<{
+      question: string
+      resumeType?: 'se' | 'tpm'
+    }>(event)
+
+    try {
+    await fetch('http://localhost:3000/api/log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        question,
+        resumeType,
+        timestamp: new Date().toISOString(),
+        sessionId: getSessionId(event),
+      }),
+    })
+  } catch (err) {
+    console.warn('[chat-resume] Logging failed:', err)
+  }
+
 
   const now = Date.now()
 
