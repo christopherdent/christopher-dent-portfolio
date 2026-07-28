@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { ScrollText, FileUser, Laptop } from "lucide-vue-next";
+import { ScrollText, FileUser, Laptop, BookOpenText } from "lucide-vue-next";
 
 const items = [
   {
@@ -52,6 +52,13 @@ const items = [
     icon: Laptop,
     external: true,
     tooltip: "Open the live VolunteerManager app",
+  },
+  {
+    label: "Writing / Blog",
+    href: "https://christopher-dent.medium.com/",
+    icon: BookOpenText,
+    external: true,
+    tooltip: "Read Chris's writing on Medium",
   },
 ];
 </script>
