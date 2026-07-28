@@ -35,6 +35,7 @@
         </div>
 
         <LinkList />
+        <ProjectShowcase />
 
         <!-- </div> -->
       </div>
@@ -70,6 +71,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import ThemeToggle from '~/components/ThemeToggle.vue';
+import ProjectShowcase from '~/components/ProjectShowcase.vue';
 import { useTheme } from '~/composables/useTheme';
 
 const { theme } = useTheme();

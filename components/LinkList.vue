@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { ScrollText, FileUser, Laptop, BookOpenText } from "lucide-vue-next";
+import { ScrollText, FileUser, BookOpenText } from "lucide-vue-next";
 
 const items = [
   {
@@ -45,13 +45,6 @@ const items = [
     href: "/about",
     icon: FileUser,
     tooltip: "Learn more about Chris",
-  },
-  {
-    label: "View Demo Project",
-    href: "https://consistent-robinetta-christopherdent-69ec9810.koyeb.app/",
-    icon: Laptop,
-    external: true,
-    tooltip: "Open the live VolunteerManager app",
   },
   {
     label: "Writing / Blog",
