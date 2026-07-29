@@ -13,12 +13,12 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: "Inter", provider: "google" },
-      { name: "Monoton", provider: "google" },
+      { name: "Space Grotesk", provider: "google" },
       { name: "Audiowide", provider: "google" },
-      { name: "Zen Dots", provider: "google" },
     ],
   },
   app: {
+    pageTransition: { name: "shatter", mode: "out-in" },
     head: {
       script: [
         { src: "https://cdn.jsdelivr.net/npm/three/build/three.min.js", defer: true },
@@ -27,10 +27,6 @@ export default defineNuxtConfig({
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         { rel: "icon", type: "image/png", href: "/favicon.png" },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap",
-        },
       ],
     },
   },
