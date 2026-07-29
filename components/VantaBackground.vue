@@ -6,11 +6,12 @@ let vantaEffect = null
 const vantaRef = ref(null)
 const { theme } = useTheme()
 
+// Subtle, muted ambient colors for background lines
 const themeColors = {
-  cosmic: { color: 0x818cf8, backgroundColor: 0x0f172a },     // soft indigo net on dark slate
-  neon: { color: 0x34d399, backgroundColor: 0x064e3b },       // emerald net on deep dark green
-  cool: { color: 0x60a5fa, backgroundColor: 0x0f172a },       // sky blue net on dark slate
-  psychedelic: { color: 0xfacc15, backgroundColor: 0x3b0764 } // bright yellow net on deep purple
+  cosmic: { color: 0x6366f1, backgroundColor: 0x0f172a },     // subtle indigo on dark slate
+  neon: { color: 0x10b981, backgroundColor: 0x064e3b },       // muted emerald on dark green
+  cool: { color: 0x3b82f6, backgroundColor: 0x0f172a },       // muted sky blue on dark slate
+  psychedelic: { color: 0xd946ef, backgroundColor: 0x3b0764 } // soft fuchsia on deep purple
 }
 
 onMounted(async () => {
@@ -32,9 +33,9 @@ onMounted(async () => {
       scaleMobile: 1.0,
       color: currentColors.color,
       backgroundColor: currentColors.backgroundColor,
-      points: 10.0,
-      maxDistance: 22.0,
-      spacing: 16.0
+      points: 8.0,        // Fewer points for a cleaner, spacious look
+      maxDistance: 18.0,  // Shorter connection distance
+      spacing: 18.0       // Wider node spacing
     })
   }
 })
@@ -54,5 +55,6 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="vantaRef" class="fixed inset-0 w-screen h-screen -z-10 pointer-events-none"></div>
+  <!-- Muted 35% opacity wrapper for non-distracting ambient background -->
+  <div ref="vantaRef" class="fixed inset-0 w-screen h-screen -z-10 pointer-events-none opacity-35 transition-opacity duration-700"></div>
 </template>
