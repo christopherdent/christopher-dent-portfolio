@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/volunteer-manager",
+      "destination": "https://consistent-robinetta-christopherdent-69ec9810.koyeb.app/"
+    },
+    {
+      "source": "/volunteer-manager/:path*",
+      "destination": "https://consistent-robinetta-christopherdent-69ec9810.koyeb.app/:path*"
+    }
+  ]
+}
