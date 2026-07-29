@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { ScrollText, FileUser, BookOpenText } from "lucide-vue-next";
+import { ScrollText, FileUser, BookOpenText, BookMarked } from "lucide-vue-next";
 
 const items = [
   {
@@ -52,6 +52,13 @@ const items = [
     icon: BookOpenText,
     external: true,
     tooltip: "Read Chris's writing on Medium",
+  },
+  {
+    label: "Goodreads / Reading List",
+    href: "https://www.goodreads.com/user/show/93276-christopher-dent",
+    icon: BookMarked,
+    external: true,
+    tooltip: "See what Chris is reading on Goodreads",
   },
 ];
 </script>
