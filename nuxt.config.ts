@@ -25,6 +25,8 @@ export default defineNuxtConfig({
         { src: "https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js", defer: true },
       ],
       link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
         {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap",
