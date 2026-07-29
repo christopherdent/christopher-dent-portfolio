@@ -75,11 +75,14 @@ body {
   border-radius: 0.75rem;
 }
 
-/* Homepage Hero: Solid theme gradient to prevent text interference */
+/* Homepage Hero: 100% Opaque Solid Background (Zero Vanta Bleed-Through) */
 .hero-container--home {
-  background: linear-gradient(to bottom right, var(--bg1), var(--bg2)) !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  background: var(--bg1) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 1 !important;
 }
 
 @media (min-width: 1024px) {
