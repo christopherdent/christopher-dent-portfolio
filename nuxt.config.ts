@@ -2,8 +2,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     openaiApiKey: process.env.OPENAI_API_KEY || "",
         public: {
-      RESUME_SOFTWARE_ENGINEER_URL: process.env.RESUME_SOFTWARE_ENGINEER_URL || "",
-      RESUME_TPM_URL: process.env.RESUME_TPM_URL || ""
+      RESUME_SOFTWARE_ENGINEER_URL: process.env.RESUME_SOFTWARE_ENGINEER_URL || "https://cjdportfolio.s3.us-east-1.amazonaws.com/Christopher_Dent_Resume_SE_Nov25v2.pdf",
+      RESUME_TPM_URL: process.env.RESUME_TPM_URL || "https://cjdportfolio.s3.us-east-1.amazonaws.com/Christopher_Dent_Resume_Fall_25_cdpm_red.pdf"
     }
   },
   compatibilityDate: "2025-05-15",

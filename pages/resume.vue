@@ -5,7 +5,7 @@
       <!-- Back to Home -->
       <NuxtLink
         to="/"
-        class="inline-flex items-center space-x-2 text-sm font-mono font-medium text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-xl border border-white/10 transition-all duration-300 hover:-translate-x-1"
+        class="inline-flex items-center space-x-2 text-sm font-mono font-medium text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2 rounded-xl border border-white/10 transition-all duration-300 hover:-translate-x-1 cursor-pointer z-20 relative"
       >
         <ArrowLeft class="w-4 h-4" />
         <span>Return to Home</span>
