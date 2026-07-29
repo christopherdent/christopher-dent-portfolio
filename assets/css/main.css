@@ -75,6 +75,13 @@ body {
   border-radius: 0.75rem;
 }
 
+/* Homepage Hero: Solid theme gradient to prevent text interference */
+.hero-container--home {
+  background: linear-gradient(to bottom right, var(--bg1), var(--bg2)) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 @media (min-width: 1024px) {
   .hero-container {
     max-width: 75%;

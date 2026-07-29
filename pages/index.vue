@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="hero-container shadow-md rounded-xl transition-all duration-500"
+  <UContainer class="hero-container hero-container--home shadow-md rounded-xl transition-all duration-500"
               size="full">
 
     <div class="hero-inner grid max-w-screen-2xl px-4 py-8 gap-6 items-center">
